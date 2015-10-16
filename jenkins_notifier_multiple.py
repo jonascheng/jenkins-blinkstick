@@ -65,8 +65,8 @@ def get_running_job(jobs):
 def show_status(status, stop_event):
     color = 'green' if status == 'SUCCESS' else 'red'
     print "Show status:", color
-    led.blink(channel=0, name='blue', repeats=5, delay=300)
-    led.set_color(channel=0, name=color)
+    led.pulse(channel=0, name=color, repeats=5)
+    led.morph(channel=0, name=color)
 
 
 def show_running_status():
